@@ -4,51 +4,22 @@
     <meta charset="UTF-8"/>
     <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Carbon UI Shell</title>
-    <link rel="stylesheet" href="src/index.scss"/>
-    <script type="module" src="/src/my-element.ts"></script>
+    <title>Carbon | UI Shell</title>
+    <link rel="stylesheet" href="/src/ui-shell.scss"/>
+    <script type="module" src="/src/ui-shell.ts"></script>
 </head>
 <body>
-<cds-header aria-label="Header">
-
-    <cds-header-menu-button
-            button-label-active="Close menu"
-            button-label-inactive="Open menu"
-    ></cds-header-menu-button>
-
-    <cds-header-name
-            href="javascript:void 0"
-            prefix="UI"
-    >Shell
-    </cds-header-name>
-
-    <div class="cds--header__global">
-        <cds-header-global-action
-                id="switcher-action"
-                button-label-active="Close switcher"
-                button-label-inactive="Open switcher"
-                tooltip-text="Open switcher"
-                panel-id="switcher-panel"
-                tooltip-alignment="right"
-        ></cds-header-global-action>
+<ui-shell>
+    <div slot="content" class="main-content">
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laudantium, veritatis? Adipisci aperiam
+            assumenda consequuntur cumque cupiditate debitis deserunt distinctio enim error esse eum exercitationem
+            expedita incidunt ipsam magnam maiores minus natus nemo nisi obcaecati officiis perspiciatis quam, quas quia
+            ratione sint suscipit tempore vel, voluptates voluptatum! Accusantium aspernatur commodi corporis cum
+            doloremque esse est exercitationem fugit harum hic, id impedit in ipsam molestiae molestias nobis nostrum
+            nulla odio optio perferendis placeat possimus quia quibusdam quo, quod recusandae sapiente sint tempore
+            tenetur voluptas! Aliquid aperiam distinctio eveniet illo nesciunt sed temporibus.</p>
     </div>
-
-    <cds-header-panel
-            id="switcher-panel"
-            aria-label="App switcher Panel"
-    >Tu me vois...
-    </cds-header-panel>
-
-</cds-header>
-<main id="main-content" class="cds--content">
-    <h1 class="display-inline-block">Je déteste le web</h1>
-</main>
-<script type="module">
-    import {html, render} from 'lit'
-    import Switcher20 from '@carbon/web-components/es/icons/switcher/20.js';
-
-    const globalAction = document.getElementById('switcher-action')
-    render(html`${Switcher20({slot: 'icon'})}`, globalAction);
-</script>
+</ui-shell>
 </body>
 </html>

@@ -4,17 +4,24 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "cem": "cem analyze --config cem.js",
+    "dev": "concurrently \"npm run cem -- --watch\" \"vite\"",
+    "build": "tsc && npm run cem && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@carbon/web-components": "^2.23.0",
-    "lit": "^3.2.1"
+    "@carbon/web-components": "latest",
+    "lit": "latest"
   },
   "devDependencies": {
-    "sass-embedded": "^1.85.1",
-    "typescript": "~5.7.2",
-    "vite": "^6.2.0"
-  }
+    "@custom-elements-manifest/analyzer": "latest",
+    "@web-types/lit": "latest",
+    "concurrently": "latest",
+    "custom-element-jet-brains-integration": "latest",
+    "sass-embedded": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  },
+  "customElements": "custom-elements.json",
+  "web-types": "web-types.json"
 }

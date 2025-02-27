@@ -3,8 +3,11 @@
 @use '@carbon/themes/scss/themes';
 @use '@carbon/styles/scss/theme';
 @use '@carbon/type';
+@use '@carbon/grid';
+@use '@carbon/layout';
 
 @use '@carbon/styles/scss/components/button/tokens' as button-tokens;
+
 @include theme.add-component-tokens(button-tokens.$button-tokens);
 
 @include type.reset();
@@ -36,9 +39,8 @@
   @include theme.theme(themes.$g100);
 }
 
-#main-content {
-  height: 100vh;
-  width: 100vw;
-  place-items: center;
-  place-content: center;
+.main-content {
+  padding: layout.$spacing-05;
+  margin-top: layout.$spacing-09;
+  height: calc(100vh - var(layout.$spacing-09));
 }

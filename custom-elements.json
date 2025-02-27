@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/ui-shell.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "UIShell",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_switcherPanel",
+              "type": {
+                "text": "CDSHeaderPanel"
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_globalAction",
+              "type": {
+                "text": "CDSHeaderGlobalAction"
+              },
+              "privacy": "private",
+              "readonly": true
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "ui-shell",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "UIShell",
+          "declaration": {
+            "name": "UIShell",
+            "module": "src/ui-shell.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-shell",
+          "declaration": {
+            "name": "UIShell",
+            "module": "src/ui-shell.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
