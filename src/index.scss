@@ -1,0 +1,44 @@
+@use '@carbon/styles/scss/reset';
+@use '@carbon/styles/scss/config' as *;
+@use '@carbon/themes/scss/themes';
+@use '@carbon/styles/scss/theme';
+@use '@carbon/type';
+
+@use '@carbon/styles/scss/components/button/tokens' as button-tokens;
+@include theme.add-component-tokens(button-tokens.$button-tokens);
+
+@include type.reset();
+@include type.default-type();
+
+:root {
+  @include theme.theme(themes.$white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme.theme(themes.$g100);
+  }
+}
+
+[data-carbon-theme='white'] {
+  @include theme.theme(themes.$white);
+}
+
+[data-carbon-theme='g10'] {
+  @include theme.theme(themes.$g10);
+}
+
+[data-carbon-theme='g90'] {
+  @include theme.theme(themes.$g90);
+}
+
+[data-carbon-theme='g100'] {
+  @include theme.theme(themes.$g100);
+}
+
+#main-content {
+  height: 100vh;
+  width: 100vw;
+  place-items: center;
+  place-content: center;
+}

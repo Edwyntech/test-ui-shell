@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Carbon UI Shell</title>
+    <link rel="stylesheet" href="src/index.scss"/>
+    <script type="module" src="/src/my-element.ts"></script>
+</head>
+<body>
+<cds-header aria-label="Header">
+
+    <cds-header-menu-button
+            button-label-active="Close menu"
+            button-label-inactive="Open menu"
+    ></cds-header-menu-button>
+
+    <cds-header-name
+            href="javascript:void 0"
+            prefix="UI"
+    >Shell
+    </cds-header-name>
+
+    <div class="cds--header__global">
+        <cds-header-global-action
+                id="switcher-action"
+                button-label-active="Close switcher"
+                button-label-inactive="Open switcher"
+                tooltip-text="Open switcher"
+                panel-id="switcher-panel"
+                tooltip-alignment="right"
+        ></cds-header-global-action>
+    </div>
+
+    <cds-header-panel
+            id="switcher-panel"
+            aria-label="App switcher Panel"
+    >Tu me vois...
+    </cds-header-panel>
+
+</cds-header>
+<main id="main-content" class="cds--content">
+    <h1 class="display-inline-block">Je déteste le web</h1>
+</main>
+<script type="module">
+    import {html, render} from 'lit'
+    import Switcher20 from '@carbon/web-components/es/icons/switcher/20.js';
+
+    const globalAction = document.getElementById('switcher-action')
+    render(html`${Switcher20({slot: 'icon'})}`, globalAction);
+</script>
+</body>
+</html>
