@@ -32,21 +32,22 @@ export class UIShell extends LitElement {
                                 tooltip-text="Open switcher"
                                 panel-id="switcher-panel"
                                 tooltip-alignment="right"
-                                @click="${() => {
-                                    this._globalAction.active = !this._globalAction.active;
-                                    this._switcherPanel.expanded = !this._switcherPanel.expanded
-                                }}"
+                                @click="${this._toggleSwitcherPanel}"
                         >${Switcher20({slot: 'icon'})}
                         </cds-header-global-action>
                     </div>
                     <cds-header-panel
                             id="switcher-panel"
-                            aria-label="App switcher Panel"
-                    >App switcher Panel
+                            aria-label="App switcher Panel">
+                        <cds-switcher aria-label="Switcher Container">
+                            <cds-switcher-item aria-label="Take me there" href="#"
+                            >Take me there
+                            </cds-switcher-item>
+                        </cds-switcher>
                     </cds-header-panel>
                 </cds-header>
             </header>
-            
+
             <main class="cds--content">
                 <div class="cds--grid">
                     <div class="cds--row">
@@ -57,6 +58,11 @@ export class UIShell extends LitElement {
                 </div>
             </main>
         `
+    }
+
+    private _toggleSwitcherPanel(): void {
+        this._globalAction.active = !this._globalAction.active;
+        this._switcherPanel.expanded = !this._switcherPanel.expanded
     }
 
 }
